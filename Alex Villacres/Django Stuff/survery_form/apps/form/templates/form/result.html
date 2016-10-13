@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>results</title>
+    <style media="screen">
+    * {
+      margin: 0px auto;
+      font: arial;
+    }
+
+    .top {
+      height: 50px;
+      width: 500px;
+      border: 10px dotted pink;
+    }
+
+    .bottom {
+      height: 250px;
+      width: 350px;
+      border: 10px dotted pink;
+      padding: 5px;
+    }
+
+    label {
+      display: inline-block;;
+    }
+
+    p {
+      margin: 5px 0px 5px 10px;
+    }
+
+    .top > h3 {
+      text-align: center;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <h3>
+        Thanks for submitting this form! You have submitted this form {{ request.session.count }} times now.
+      </h3>
+    </div>
+    <div class="bottom">
+      <h3>Submitted Information: </h3>
+      <p>Name: {{ request.session.name }}</p>
+      <p>Dojo Location: {{ request.session.location }}</p>
+      <p>Favorite Language: {{ request.session.language }}</p>
+      <p>Comment: {{ request.session.comment }}</p>
+      <form action="/" method="post">
+        {% csrf_token %}
+        <input type="submit" name="submit" value="Go Back">
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>survery_form</title>
+    <style>
+      * {
+        margin: 0px auto;
+        font: arial;
+      }
+
+      div {
+        height: 250px;
+        width: 350px;
+        border: 10px dotted pink;
+        padding: 5px;
+      }
+
+      form {
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info_card">
+      <form action="session" method="post">
+        {% csrf_token %}
+        <label>First Name: </label><input type="text" name="name" value="">
+        <br>
+        <label>Dojo Location: </label>
+        <select name="location">
+          <option value="seattle">Seattle</option>
+          <option value="chicago">Chicago</option>
+          <option value="mountain_view">Mountain View</option>
+          <option value="dallas">Dallas</option>
+          <option value="la">LA</option>
+        </select>
+        <br>
+        <label>Favorite Language: </label>
+        <select name="language">
+          <option value="python">Python</option>
+          <option value="javascript">JavaScript</option>
+          <option value="swift">Swift</option>
+          <option value="php">PHP</option>
+          <option value="ruby">Ruby</option>
+        </select>
+        <br>
+        <label>Comment: </label>
+        <textarea name="comment" rows="10" cols="50"></textarea>
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
