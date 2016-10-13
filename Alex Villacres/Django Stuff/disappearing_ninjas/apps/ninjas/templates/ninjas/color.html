@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All Fo</title>
+      {% load staticfiles %}
+  </head>
+  <body>
+    <div>
+      {% if color == 'blue' %}
+      <img src="{% static 'ninjas/css/leonardo.jpg' %}"/>
+      {% elif color == 'purple' %}
+      <img src="{% static 'ninjas/css/donatello.jpg' %}"/>
+      {% elif color == 'red' %}
+      <img src="{% static 'ninjas/css/raphael.jpg' %}"/>
+      {% elif color == 'orange' %}
+      <img src="{% static 'ninjas/css/michelangelo.jpg' %}"/>
+      {% else %}
+      <img src="{% static 'ninjas/css/notapril.jpg' %}"/>
+      {% endif %}
+    </div>
+  </body>
+</html>
